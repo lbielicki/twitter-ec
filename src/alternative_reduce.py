@@ -42,7 +42,7 @@ for key in args.keys:
     days = [datetime.strptime(date, '%y-%m-%d') for date in dates]
     ax.plot(days, values, label=key)
 
-ax.xaxis.set_major_locator(mdates.MonthLocator(interval=12))
+ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%y-%m-%d'))
 
 ax.set_xlabel('Date')
