@@ -59,6 +59,6 @@ else:
 
 # save PNG file of graph
 if args.input_path[-1] == 'g':
-    plt.savefig(args.key[1:] + '_lang.png')
+    plt.savefig(args.key[1:] + '_langEC.png')
 else:
-    plt.savefig(args.key[1:] + '_country.png')
+    plt.savefig(args.key[1:] + '_countryEC.png')
