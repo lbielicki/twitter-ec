@@ -7,25 +7,21 @@ Please visit that repo for a more detailed explanation of my process.
 
 ## Project Steps
 
-**Step 0: Create the mapper**
 
 I modified the mapping file `map.py` to track the country level in addition to the provided language level. 
 This step allowed me to look at usage of hashtags in different languages and in different geotagged countries. 
 As such, each call to `map.py` resulted in two files, one that ends in `.lang` and one that ends in `.country` for the country dictionary.
 
-**Step 1: Run the mapper**
 
-I created a shell script called `runmaps.sh` to loop over each file in the dataset and run the `map.py` command on that file. I used `nohup` to run the command even after I disconnected and the `&` operator for parallel processing:
+Next, I created a shell script called `runmaps.sh` to loop over each file in the dataset and run the `map.py` command on that file. I used `nohup` to run the command even after I disconnected and the `&` operator for parallel processing:
 ```
 $ nohup sh runmaps.sh &
 ```
 
-**Step 2: Reduce**
 
 Using the resulting `outputs` files, I applied `reduce.py` file to combine all of the `.lang` files into a single file,
 and all of the `.country` files into a different file.
 
-**Step 3: Visualize**
 
 I modified the `visualize.py` file to create bar graph of the results and stores the bar graph as a png file.
 After running (for example) :
